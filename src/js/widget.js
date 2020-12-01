@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-cond-assign */
 /* eslint-disable no-plusplus */
@@ -6,6 +7,7 @@ import data from './paymentSystems.json'
 import validateNumber from './validateNumber'
 import validateLuhn from './validateLuhn'
 import detectPaymentSystem from './detectPaymentSystem'
+
 export default class CardWidget {
   constructor() {
     this.paymentSystems = data
