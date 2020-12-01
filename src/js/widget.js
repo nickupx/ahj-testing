@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-cond-assign */
@@ -21,7 +22,6 @@ export default class CardWidget {
   async init() {
     let html = ''
     for (const logo of this.paymentSystems) {
-      console.log(logo.id)
       const url = import(`../img/${logo.id}.png`)
       const response = await url
       html += `<img src="${response.default}" data-logo="${logo.id}" id="logo-${logo.id}" class="logo-img" alt="${logo.name}">`
