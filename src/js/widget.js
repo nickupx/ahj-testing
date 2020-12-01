@@ -7,13 +7,32 @@ import validateNumber from './validateNumber'
 import validateLuhn from './validateLuhn'
 import detectPaymentSystem from './detectPaymentSystem'
 
+import imgVisa from '../img/visa.png'
+import imgMc from '../img/mc.png'
+import imgAmex from '../img/amex.png'
+import imgJcb from '../img/jcb.png'
+import imgDiners from '../img/diners.png'
+import imgDiscover from '../img/discover.png'
+import imgMir from '../img/mir.png'
+
+const imgs = {
+  visa: imgVisa,
+  mc: imgMc,
+  amex: imgAmex,
+  jcb: imgJcb,
+  diners: imgDiners,
+  discover: imgDiscover,
+  mir: imgMir,
+}
+
 export default class CardWidget {
   constructor() {
     this.paymentSystems = data
     this.logosContainer = document.getElementById('logos')
+    this.imgs = imgs
     let html = ''
     for (const logo of this.paymentSystems) {
-      html += `<img src="${logo.imgUrl}" data-logo="${logo.id}" id="logo-${logo.id}" class="logo-img" alt="${logo.name}">`
+      html += `<img src="${this.imgs[logo.id]}" data-logo="${logo.id}" id="logo-${logo.id}" class="logo-img" alt="${logo.name}">`
     }
     this.logosContainer.innerHTML = html
     this.form = document.getElementById('form')

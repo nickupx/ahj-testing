@@ -29,6 +29,7 @@
     "file-loader": "^6.2.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
+    "image-loader": "^0.0.1",
     "jest": "^25.4.0",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.9.0",

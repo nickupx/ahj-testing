@@ -24,13 +24,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|ico)$/i,
         use: [
           {
             loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
           },
         ],
       },
@@ -38,6 +35,14 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader, 'css-loader',
+        ],
+      },
+      {
+        test: /\.txt$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
         ],
       },
     ],
